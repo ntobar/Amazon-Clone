@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app">
       <h1>Apollo prepared for Launch</h1>
-      {/* Header */}
+      <Header />
       {/* Home */}
     </div>
   );

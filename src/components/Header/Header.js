@@ -14,11 +14,20 @@ function Header() {
       </div>
 
       <div className="header_nav">
-        <div className="header_option"></div>
+        <div className="header_option">
+          <span className="header_optionLineOne">Apollo greets you</span>
+          <span className="header_optionLineOne">Sign in</span>
+        </div>
 
-        <div className="header_option"></div>
+        <div className="header_option">
+          <span className="header_optionLineOne">Returns</span>
+          <span className="header_optionLineOne">& Orders</span>
+        </div>
 
-        <div className="header_option"></div>
+        <div className="header_option">
+          <span className="header_optionLineOne">Your</span>
+          <span className="header_optionLineOne">Prime</span>
+        </div>
       </div>
     </div>
   );
