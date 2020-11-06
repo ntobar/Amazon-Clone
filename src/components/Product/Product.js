@@ -5,15 +5,22 @@ function Product() {
   return (
     <div className="product">
       <div className="product_info">
-        <p>Python Programming innovation</p>
+        <p>The Lean Startup</p>
         <p className="product_price">
           <small>$</small>
           <strong>17.99</strong>
         </p>
-        <p className="product_rating">
-          <p>⭐</p>
-        </p>
+        <div className="product_rating">
+          <p> ⭐</p>
+        </div>
       </div>
+
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY500_.jpg"
+        alt=""
+      />
+
+      <button>Add to Cart</button>
     </div>
   );
 }
