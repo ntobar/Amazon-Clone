@@ -19,7 +19,7 @@ function Header() {
 
       <div className="header_nav">
         <div className="header_option">
-          <span className="header_optionLineOne">Apollo greets you</span>
+          <span className="header_optionLineOne">Apollo</span>
           <span className="header_optionLineTwo">Sign in</span>
         </div>
 
