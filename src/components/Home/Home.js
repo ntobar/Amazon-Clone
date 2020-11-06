@@ -12,8 +12,10 @@ function Home() {
           alt=""
         />
 
-        <div className="home_row"></div>
-        <Product />
+        <div className="home_row">
+          <Product />
+          <Product />
+        </div>
         <div className="home_row"></div>
         <div className="home_row"></div>
       </div>
