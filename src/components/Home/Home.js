@@ -2,6 +2,10 @@ import React from "react";
 import "./Home.css";
 import Product from "../Product/Product";
 import shakerImg from "../../img/amazon.jpg";
+import espressoImg from "../../img/espresso.jpg";
+import surfWaxImg from "../../img/surfWax.jpg";
+import keyboardImg from "../../img/keyboard.jpg";
+import tableImg from "../../img/coffeetable.jpg";
 
 function Home() {
   return (
@@ -29,15 +33,32 @@ function Home() {
         </div>
         <div className="home_row">
           <Product
-            title="The Lean Startup"
-            price={24.99}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY500_.jpg"
+            title="Sticky Bumps Cool/Cold Water Surfboard Wax 5 Pack"
+            price={12.85}
+            image={surfWaxImg}
+            rating={5}
+          />
+          <Product
+            title="Breville BES870XL Barista Express Espresso Machine, Brushed Stainless Steel"
+            price={599.95}
+            image={espressoImg}
             rating={4}
           />
-          <Product />
-          <Product />
+          <Product
+            title="PICTEK RGB Gaming Keyboard USB Wired"
+            price={21.99}
+            image={keyboardImg}
+            rating={4}
+          />
         </div>
-        <div className="home_row"></div>
+        <div className="home_row">
+          <Product
+            title="VASAGLE Industrial Coffee Table with Storage Shelf for Living Room, Wood Look Accent Furniture with Metal Frame, Easy Assembly, Rustic Brown ULCT61X"
+            price={63.42}
+            image={tableImg}
+            rating={4}
+          />
+        </div>
       </div>
     </div>
   );
