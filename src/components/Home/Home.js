@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Product from "../Product/Product";
+import shakerImg from "../../img/amazon.jpg";
 
 function Home() {
   return (
@@ -13,15 +14,25 @@ function Home() {
         />
 
         <div className="home_row">
-          <Product />
-          <Product />
+          <Product
+            title="The Lean Startup"
+            price={24.99}
+            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY500_.jpg"
+            rating={4}
+          />
+          <Product
+            title="BlenderBottle Classic V2 Shaker Bottle, 28-Ounce, Black"
+            price={9.99}
+            image={shakerImg}
+            rating={5}
+          />
         </div>
         <div className="home_row">
           <Product
             title="The Lean Startup"
             price={24.99}
             image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY500_.jpg"
-            rating={5}
+            rating={4}
           />
           <Product />
           <Product />
