@@ -10,7 +10,7 @@ function Subtotal() {
           <>
             <p>
               Subtotal (0 items):
-              <strong>{` ${value}`}</strong>
+              <strong>0</strong>
             </p>
             <small className="subtotal_gift">
               <input type="checkbox" /> This order contains a gift{" "}
