@@ -10,7 +10,7 @@ function Subtotal() {
   function getSubtotal(item) {
     subtotalValue += item.price;
     console.log(`current subtotal: ${subtotalValue}`);
-    return subtotalValue;
+    //return subtotalValue;
   }
 
   return (
@@ -20,7 +20,7 @@ function Subtotal() {
           <>
             <p>
               Subtotal ({basket.length} items):
-              <strong>{basket.map(getSubtotal)}</strong>
+              <strong>${(basket.map(getSubtotal), subtotalValue)}</strong>
             </p>
             <small className="subtotal_gift">
               <input type="checkbox" /> This order contains a gift{" "}
