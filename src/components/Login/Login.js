@@ -3,6 +3,8 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 
+//TODO:
+//Switch from promises to await
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -10,6 +12,13 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
