@@ -6,6 +6,10 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const signIn = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="login">
       <Link to="/">
@@ -32,7 +36,9 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="login_signinButton">Sign In</button>
+          <button className="login_signinButton" type="submit" onClick={signIn}>
+            Sign In
+          </button>
         </form>
         <p>
           By signing-in you are agreeing to Apollo's Conditions of Use and Terms
