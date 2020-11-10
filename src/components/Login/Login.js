@@ -10,6 +10,10 @@ function Login() {
     e.preventDefault();
   };
 
+  const register = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="login">
       <Link to="/">
@@ -44,7 +48,7 @@ function Login() {
           By signing-in you are agreeing to Apollo's Conditions of Use and Terms
           of Service. Please see our Privacy Notice and Terms of Service.
         </p>
-        <button className="login_registerButton">
+        <button className="login_registerButton" onClick={register}>
           Create your Apollo account
         </button>
       </div>
