@@ -19,12 +19,14 @@ function Home() {
 
         <div className="home_row">
           <Product
+            id="1"
             title="The Lean Startup"
             price={24.99}
             image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY500_.jpg"
             rating={4}
           />
           <Product
+            id="2"
             title="BlenderBottle Classic V2 Shaker Bottle, 28-Ounce, Black"
             price={9.99}
             image={shakerImg}
@@ -33,18 +35,21 @@ function Home() {
         </div>
         <div className="home_row">
           <Product
+            id="3"
             title="Sticky Bumps Cool/Cold Water Surfboard Wax 5 Pack"
             price={12.85}
             image={surfWaxImg}
             rating={5}
           />
           <Product
+            id="4"
             title="Breville BES870XL Barista Express Espresso Machine, Brushed Stainless Steel"
             price={599.95}
             image={espressoImg}
             rating={4}
           />
           <Product
+            id="5"
             title="PICTEK RGB Gaming Keyboard USB Wired"
             price={21.99}
             image={keyboardImg}
@@ -53,6 +58,7 @@ function Home() {
         </div>
         <div className="home_row">
           <Product
+            id="6"
             title="VASAGLE Industrial Coffee Table with Storage Shelf for Living Room, Wood Look Accent Furniture with Metal Frame, Easy Assembly, Rustic Brown ULCT61X"
             price={63.42}
             image={tableImg}
