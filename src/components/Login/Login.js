@@ -15,9 +15,27 @@ function Login() {
 
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      const pushHistory = async (auth) => {
-        await history.push("/");
+      const pushHistory = (auth) => {
+        history.push("/");
       };
+      pushHistory();
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+  const register = async (e) => {
+    e.preventDefault();
+
+    try {
+      await auth.createUserWithEmailAndPassword(email, password);
+      const pushHistory = (auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      };
+      pushHistory(auth);
     } catch (err) {
       alert(err.message);
     }
@@ -34,19 +52,19 @@ function Login() {
   //     .catch((error) => alert(error.message));
   // };
 
-  const register = (e) => {
-    e.preventDefault();
-
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        console.log(auth);
-        if (auth) {
-          history.push("/");
-        }
-      })
-      .catch((error) => alert(error.message));
-  };
+  // const register = (e) => {
+  //   e.preventDefault();
+  //
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       console.log(auth);
+  //       if (auth) {
+  //         history.push("/");
+  //       }
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
   return (
     <div className="login">
