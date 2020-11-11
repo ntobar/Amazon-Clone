@@ -10,16 +10,29 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
 
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push("/");
-      })
-      .catch((error) => alert(error.message));
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      const pushHistory = async (auth) => {
+        await history.push("/");
+      };
+    } catch (err) {
+      alert(err.message);
+    }
   };
+
+  // const signIn = (e) => {
+  //   e.preventDefault();
+  //
+  //   auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       history.push("/");
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
   const register = (e) => {
     e.preventDefault();
