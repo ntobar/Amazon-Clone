@@ -7,7 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="header">
@@ -27,7 +27,9 @@ function Header() {
         <Link to="/login">
           <div className="header_option">
             <span className="header_optionLineOne">Apollo</span>
-            <span className="header_optionLineTwo">Sign in</span>
+            <span className="header_optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
 
