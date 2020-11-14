@@ -29,15 +29,19 @@ function Login() {
     e.preventDefault();
 
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
-      const pushHistory = (auth) => {
-        console.log(auth);
-        if (auth) {
-          history.push("/");
-        }
-      };
-      updateUser(username);
-      pushHistory(auth);
+      if (!username) {
+        alert("please select a username");
+      } else {
+        await auth.createUserWithEmailAndPassword(email, password);
+        const pushHistory = (auth) => {
+          console.log(auth);
+          if (auth) {
+            history.push("/");
+          }
+        };
+        updateUser(username);
+        pushHistory(auth);
+      }
     } catch (err) {
       alert(err.message);
     }
