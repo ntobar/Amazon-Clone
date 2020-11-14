@@ -7,6 +7,7 @@ import { auth } from "../../firebase";
 //Switch from promises to await
 function Login() {
   const history = useHistory();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -35,10 +36,25 @@ function Login() {
           history.push("/");
         }
       };
+      updateUser(username);
       pushHistory(auth);
     } catch (err) {
       alert(err.message);
     }
+  };
+
+  const updateUser = (a) => {
+    var user = auth.currentUser;
+    user
+      .updateProfile({
+        displayName: a,
+      })
+      .then(function () {
+        history.push(auth);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // const signIn = (e) => {
@@ -66,6 +82,8 @@ function Login() {
   //     .catch((error) => alert(error.message));
   // };
 
+  //(e) => setUsername(e.target.value)
+
   return (
     <div className="login">
       <Link to="/">
@@ -78,6 +96,15 @@ function Login() {
       <div className="login_container">
         <h1>Sign-in</h1>
         <form>
+          <h5>
+            <strong>Username</strong>
+            <small> (For users Signing Up)</small>
+          </h5>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <h5>Email</h5>
           <input
             type="text"

@@ -9,23 +9,27 @@ import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{ username }, dispatch] = useStateValue();
+  var user = auth.currentUser;
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log("User-> ", authUser);
 
       if (authUser) {
+        console.log(`username ->>> ${username}`);
         //User logged in
         dispatch({
           type: "SET_USER",
           user: authUser,
+          //username: user.displayName
         });
       } else {
         //User logged out
         dispatch({
           type: "SET_USER",
           user: null,
+          username: null,
         });
       }
     });
