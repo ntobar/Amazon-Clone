@@ -19,6 +19,7 @@ function Home() {
 
         <div className="home_row">
           <Product
+            key="10"
             id="1"
             title="The Lean Startup"
             price={24.99}
@@ -26,6 +27,7 @@ function Home() {
             rating={4}
           />
           <Product
+            key="20"
             id="2"
             title="BlenderBottle Classic V2 Shaker Bottle, 28-Ounce, Black"
             price={9.99}
@@ -35,6 +37,7 @@ function Home() {
         </div>
         <div className="home_row">
           <Product
+            key="30"
             id="3"
             title="Sticky Bumps Cool/Cold Water Surfboard Wax 5 Pack"
             price={12.85}
@@ -42,6 +45,7 @@ function Home() {
             rating={5}
           />
           <Product
+            key="40"
             id="4"
             title="Breville BES870XL Barista Express Espresso Machine, Brushed Stainless Steel"
             price={599.95}
@@ -49,6 +53,7 @@ function Home() {
             rating={4}
           />
           <Product
+            key="50"
             id="5"
             title="PICTEK RGB Gaming Keyboard USB Wired"
             price={21.99}
@@ -58,6 +63,7 @@ function Home() {
         </div>
         <div className="home_row">
           <Product
+            key="60"
             id="6"
             title="VASAGLE Industrial Coffee Table with Storage Shelf for Living Room, Wood Look Accent Furniture with Metal Frame, Easy Assembly, Rustic Brown ULCT61X"
             price={63.42}
