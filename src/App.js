@@ -11,6 +11,10 @@ import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
+const promise = loadStripe(
+  "pk_test_51HTxCVDTDxndnwTNGWnJ8OlVydUgKH36bUdghTyHf8ANsYWiI47iPrTH2ZHW1ph8k3rzBuQP54E06OMYa0XNXZIp00V6nUOjRC"
+);
+
 function App() {
   const [{ username }, dispatch] = useStateValue();
   var user = auth.currentUser;
@@ -51,7 +55,9 @@ function App() {
           </Route>
           <Route path="/payment">
             <Header />
-            <Payment />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route path="/">
             <Header />
