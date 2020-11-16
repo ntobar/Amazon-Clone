@@ -11,6 +11,10 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
+  const handleSubmit = (e) => {};
+
+  const handleChange = (e) => {};
+
   return (
     <div className="payment">
       <div className="payment_container">
@@ -50,11 +54,11 @@ function Payment() {
         <div className="payment_section">
           <div className="payment_title">
             <h3>Payment Method</h3>
-            <div className="payment_details">
-              <form>
-                <CardElement />
-              </form>
-            </div>
+          </div>
+          <div className="payment_details">
+            <form onSubmit={handleSubmit}>
+              <CardElement onChange={handleChange} />
+            </form>
           </div>
         </div>
       </div>
