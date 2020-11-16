@@ -8,8 +8,10 @@ const stripe = require("stripe")(
 // API setup
 
 // - App Configuration
+const app = express();
 
 // - Middlewares
+app.use(cors({ origin: true }));
 
 // - API routes
 
