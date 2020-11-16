@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../reducer";
-import axios
+import axios from "../../axios";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -16,16 +16,19 @@ function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [clientSecret, setClientSecret] = useState(true);
 
-//Runs every time the basket changes
-//Lets us charge a client
+  //Runs every time the basket changes
+  //Lets us charge a client
   useEffect(() => {
-
     const getClientSecret = async () => {
-      const response = await axios
-    }
+      const response = await axios({
+        method: "post",
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+      });
+      setClientSecret(response.data.clientSecret);
+    };
 
     getClientSecret();
-  }, [basket])
+  }, [basket]);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -34,9 +37,11 @@ function Payment() {
     e.preventDefault();
     setProcessing(true);
 
-
-
-    //const payload = await stripe
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
   };
 
   //Handles CardElement changes
