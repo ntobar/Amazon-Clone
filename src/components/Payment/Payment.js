@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Payment.css";
 import { useStateValue } from "../../StateProvider";
 import BasketItem from "../BasketItem/BasketItem";
 import { Link } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import CurrencyFormat from "react-currency-format";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+
+  const [error, setError] = useState(null);
+  const [disabled, setDisabled] = useState(true);
 
   const stripe = useStripe();
   const elements = useElements();
 
   const handleSubmit = (e) => {};
 
-  const handleChange = (e) => {};
+  //Handles CardElement changes
+  const handleChange = (e) => {
+    setDisabled(e.empty);
+    setError(e.error ? e.error.message : "");
+  };
 
   return (
     <div className="payment">
@@ -58,6 +66,27 @@ function Payment() {
           <div className="payment_details">
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
+
+              <div className="payment_priceContainer">
+                <CurrencyFormat
+                  renderText={(value) => (
+                    <>
+                      <p>
+                        Subtotal ({basket.length} items):
+                        <strong>{value}</strong>
+                      </p>
+                      <small className="subtotal_gift">
+                        <input type="checkbox" /> This order contains a gift{" "}
+                      </small>
+                    </>
+                  )}
+                  decimalScale={2}
+                  value={getBasketTotal(basket)}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                />
+              </div>
             </form>
           </div>
         </div>
