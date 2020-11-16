@@ -12,8 +12,10 @@ const app = express();
 
 // - Middlewares
 app.use(cors({ origin: true }));
+app.use(express.json());
 
 // - API routes
+app.get("/", (request, res) => res.status(200).send("hi"));
 
 // - Listen command
 // // Create and Deploy Your First Cloud Functions
