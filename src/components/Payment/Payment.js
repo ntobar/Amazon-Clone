@@ -70,17 +70,7 @@ function Payment() {
 
               <div className="payment_priceContainer">
                 <CurrencyFormat
-                  renderText={(value) => (
-                    <>
-                      <p>
-                        Subtotal ({basket.length} items):
-                        <strong>{value}</strong>
-                      </p>
-                      <small className="subtotal_gift">
-                        <input type="checkbox" /> This order contains a gift{" "}
-                      </small>
-                    </>
-                  )}
+                  renderText={(value) => <h3>Order Total {value}</h3>}
                   decimalScale={2}
                   value={getBasketTotal(basket)}
                   displayType={"text"}
