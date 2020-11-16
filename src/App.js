@@ -8,6 +8,8 @@ import Payment from "./components/Payment/Payment";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
   const [{ username }, dispatch] = useStateValue();
