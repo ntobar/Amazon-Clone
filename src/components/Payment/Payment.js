@@ -5,6 +5,7 @@ import BasketItem from "../BasketItem/BasketItem";
 import { Link } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
+import { getBasketTotal } from "../../reducer";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
