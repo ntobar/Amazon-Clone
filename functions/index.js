@@ -15,13 +15,7 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 // - API routes
-app.get("/", (request, res) => res.status(200).send("hi"));
+app.get("/", (request, response) => response.status(200).send("hi"));
 
 // - Listen command
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+exports.api = functions.https.onRequest(app);
