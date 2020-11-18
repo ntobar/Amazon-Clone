@@ -50,7 +50,18 @@ function Payment() {
       .then(({ paymentIntent }) => {
         //PaymentIntent is the payment confirmation
 
-        //Pushing into database
+        //Pushing into database, targeting the users collection.
+        //Then into that users orders collection
+
+        db.collection("users")
+          .doc(user?.id)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
         setSucceeded(true);
         setError(null);
