@@ -31,6 +31,8 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
+  console.log(`the secret is ->>`, clientSecret);
+
   const stripe = useStripe();
   const elements = useElements();
 
