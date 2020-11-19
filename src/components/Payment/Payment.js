@@ -54,7 +54,7 @@ function Payment() {
         //Then into that users orders collection
 
         db.collection("users")
-          .doc(user?.id)
+          .doc(user?.uid)
           .collection("orders")
           .doc(paymentIntent.id)
           .set({
