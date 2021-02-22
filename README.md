@@ -2,12 +2,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 # Apollo Marketplace - Amazon Clone
-> NOTE: This is a personal project only, intended to test my skills at developing a real E-commerce website by building an amazon-clone.
+
 * https://apollo-a41ae.web.app/
 > [This project](https://apollo-a41ae.web.app/) is a Full-Stack Amazon Clone made with the intent to make it look as alike as possible to the real version. It has all the functionalities including: 
 * User Authentication
 * Payment Processing
 * Database storage for returning users
+> NOTE: This is a personal project only, intended to test my skills at developing a real E-commerce website by building an amazon-clone.
 <hr>
 
 
